@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>DTLP: Contact Us</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- For third-generation iPad with high-resolution Retina display: -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="components/brandkit/favicon/favicon-144px.png">
+
+  <!-- For iPhone with high-resolution Retina display: -->
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="components/brandkit/favicon/favicon-114px.png">
+
+  <!-- For first- and second-generation iPad: -->
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="components/brandkit/favicon/favicon-72px.png">
+
+  <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+  <link rel="apple-touch-icon-precomposed" href="components/brandkit/favicon/favicon.png">
+
+  <link rel="icon" href="components/brandkit/favicon/favicon.ico">
+  <link href="css/iids.css" rel="stylesheet" type="text/css">
+  <link href="css/responsive.css" rel="stylesheet" type="text/css">
+  <link href="css/maps.css" rel="stylesheet" type="text/css">
+  <script src="js/mapaschingon.js"></script>
+   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsRmIUtIuttsM_GgbYKS7e1_zV7zvBc5M&libraries=places&callback=initAutocomplete"
+         async defer></script>
+  <!--[if lt IE 9]>
+    <link id="theme-ie" href="../../css/ie.css" rel="stylesheet" type="text/css">
+  <![endif]-->
+
+  <script src="components/modernizr/modernizr.js"></script>
+</head>
+<body>
+
+<input type="button" value="Clean Search" onClick="window.location.reload()">
+<label for="searchlocations" id="slocations" >
+				Search  DTLP Locations By:
+				</label>
+<select name="lfitler" id="slfilter" onchange="ShowInputs()">
+					<option value="One" selected>-</option>
+					<option value="Business">Business</option>
+					<option value="US Locations">US Locations</option>
+					<option value="Global Locations">Global Locations</option>
+					</select>
+<label hidden for="BizUnits" id="LBizUnits">
+				GE Business
+				</label>
+<select hidden name="Biz" id="BizUnits" onchange="oneclick()">
+					<option value="none" selected></option>
+					<option value="GE Aviation HQ">Aviation</option>
+					<option value="GE Digital HQ">Digital</option>
+					<option value="GE HealthCare HQ">Healthcare</option>
+					<option value="GE Power HQ">Power</option>
+					<option value="GE Renewables HQ">Renewable Energy</option>
+					<option value="GE Energy HQ">Energy Connections</option>
+					<option value="GE Transporation HQ">Transportation</option>
+					</select>
+<label hidden for="Bizlocationsocations" id="LBizlocations">
+				US Locations
+				</label>
+<select hidden name="uslocations" id="Bizlocations" onchange="oneclick()">
+					<option value="none" selected></option>
+					<option value="GE Albany County, NY">Albany County, NY</option>
+					<option value="GE Alpharetta, GA">Alpharetta, GA</option>
+					<option value="GE Atlanta, GA">Atlanta, GA</option>
+					<option value="GE Barrington, IL">Barrington, IL</option>
+					<option value="GE Boston, MA">Boston, MA</option>
+					<option value="GE Cary, NC">Cary, NC</option>
+					<option value="GE Charlottesville, VA">Charlottesville, VA</option>
+					<option value="GE Chicago, IL">Chicago, IL</option>
+					<option value="GE Cincinnati, OH">Cincinnati, OH</option>
+					<option value="GE Cleveland, OH">Cleveland, OH</option>
+					<option value="GE Detroit, MI">Detroit, MI</option>
+					<option value="GE Erie, PA">Erie, PA*</option>
+					<option value="GE Fairfield, CT">Fairfield, CT</option>
+					<option value="GE Foxboro, MA">Foxboro, MA</option>
+					<option value="GE Glen Allen, VA">Glen Allen, VA</option>
+					<option value="GE Grand Rapids, MI">Grand Rapids, MI</option>
+					<option value="GE Greenville, SC">Greenville, SC</option>
+					<option value="GE Grove City, PA">Grove City, PA</option>
+					<option value="GE Houston, TX">Houston, TX</option>
+					<option value="GE Lisle, IL">Lisle, IL</option>
+					<option value="GE Milwaukee, WI">Milwaukee, WI</option>
+					<option value="GE New Orleans, LA">New Orleans, LA</option>
+					<option value="GE San Antonio, TX">San Antonio, TX</option>
+					<option value="GE San Ramon, CA">San Ramon, CA</option>
+					<option value="GE Schenectady, NY">Schenectady, NY</option>
+					<option value="GE Seattle, WA">Seattle, WA</option>
+					<option value="GE South Lake Tahoe, NV">South Lake Tahoe, NV</option>
+					<option value="GE Trevose, PA">Trevose, PA</option>
+					<option value="GE Waukesha, WI">Waukesha, WI</option>
+					<option value="GE Wilmington, NC">Wilmington, NC</option>
+					</select>
+<label hidden for="Gecountries" id="LGecountries">
+				Global Locations
+				</label>					
+<select hidden name="countries" id="Gecountries" onchange="oneclick()">
+							<option value="none" selected></option>
+							<option value="GE Algeria">Algeria</option>
+							<option value="GE Angola">Angola</option>
+							<option value="GE Australia">Australia</option>
+							<option value="GE Austria">Austria</option>
+							<option value="GE Bahrain">Bahrain</option>
+							<option value="GE Brazil">Brazil</option>
+							<option value="GE Canada">Canada</option>
+							<option value="GE China">China</option>
+							<option value="GE Czech Republic">Czech Republic</option>
+							<option value="GE France">France</option>
+							<option value="GE Hungary">Hungary</option>
+							<option value="GE India">India</option>
+							<option value="GE Indonesia">Indonesia</option>
+							<option value="GE Italy">Italy</option>
+							<option value="GE Japan">Japan</option>
+							<option value="GE Kenya">Kenya</option>
+							<option value="GE Korea">Korea</option>
+							<option value="GE Lebanon">Lebanon</option>
+							<option value="GE Mexico">Mexico</option>
+							<option value="GE Nigeria">Nigeria</option>
+							<option value="GE Poland">Poland</option>
+							<option value="GE Qatar">Qatar</option>
+							<option value="GE Russia">Russia</option>
+							<option value="GE Saudi Arabia">Saudi Arabia</option>
+							<option value="GE Singapore">Singapore</option>
+							<option value="GE Switzerland">Switzerland</option>
+							<option value="GE Turkey">Turkey</option>
+							<option value="GE United Kingdom">United Kingdom</option>
+					</select>					
+					
+
+<input id="pac-input" class="controls" type="text" placeholder="Search Box" style="width:30%;height:10%" align="left">
+    <div id="map" style="width:100%;height:100%">
+	
+	</div>
+
+
+<script src="../../components/requirejs/require.js"></script>
+<script src="../../js/require.config.js"></script>
+<script type="text/javascript">
+  require.config({
+    baseUrl: '../../'
+  });
+  require(['iids', './js/app/basic.js']);
+</script>
+ <script src="../../components/respond/respond.src.js"></script>
+  </body>
+</html>
